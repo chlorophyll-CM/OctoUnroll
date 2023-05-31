@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OctoUnroll</title>
+  <link rel="icon" href="/icon.png" />
+  <link rel="stylesheet" href="/main.css" />
+  <script src="/script.js" defer></script>
+  <script>
+  </script>
+  <base target="_blank" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>Octopus Unenrollment<h1>
+    <p class="acronym">
+      Shady Hacking 1nstrument Makes Machine Enrollment Retreat
+    </p>
+  </div>
+  <div class="section blue">
+    <h3>What is SH1MMER?</h3>
+    <p>
+      SH1MMER is an exploit capable of completely unenrolling
+      enterprise-managed Chromebooks. It was found by
+      the <a href="https://mercurywork.shop">Mercury Workshop team</a> and
+      was released on January,
+      <u onclick="alert(messages.friday)">Friday the 13th</u>, 2023.
+
+      For more info, check out the <a href="https://coolelectronics.me/blog/breaking-cros-2">Writeup</a>
+    </p>
+    
+
+  </div>
+  <div class="section green">
+    <h3>What you will need</h3>
+    <li>A USB with at least 8 GBs of storage</li>
+    <li>
+      <u onclick="alert(messages.pc)">A personal computer or chromebook;</u> note that you
+      need admin perms on Windows/MacOS
+    </li>
+    <hr />
+    <h3>Writing to USB</h3>
+    <p>
+      First, you'll need to find your managed Chromebook's board name. This can
+      be done by going to <kbd>chrome://version</kbd> on your Chromebook and
+      copying the word after "stable-channel", or with
+      <u onclick="alert(messages.board)">a variety of other methods</u>.
+    </p>
+    <p>
+      If your board name is in the list below, your board has a publicly leaked RMA shim. If it's not, you'll have to
+      source it
+      on your own... somehow.
+    </p>
+    brask, brya, clapper, coral, dedede, enguarde, glimmer, grunt, hana,
+    hatch, jacuzzi, kukui, nami, octopus, orco, pyro, reks, sentry, stout,
+    strongbad, tidus, ultima, volteer, zork
+    <p>
+      First you need to download a sh1mmer bin. Download a shim at <a
+        href="https://shim.the-repo.org/">shim.the-repo.org</a><br> , and build it with the <a
+        href="/builder">sh1mmer web builder</a><br>
+      Once you've obtained a MODIFIED SHIM (NOT A RAW SHIM), you can continue.
+    </p>
+      <pre>
+
+
+        disable wp (cr50 or screw)
+
+turn on chromebook and boot into sh1mmer
+
+run unenroll in sh1mmer (will have an error, thats ok)
+
+open sh1mmer bash shell and run /usr/share/vboot/bin/set_gbb_flags.sh 0x8090
+
+**IMPORTANT: DO NOT RUN RESET GBB FLAGS AFTER THIS!!!**
+
+now run the commands: 
+flashrom --wp-disable 
+sudo vpd -i RW_VPD -s check_enrollment=0
+sudo vpd -i RW_VPD -s block_devmode=0
+sudo crossystem block_devmode=0
+(the flashrom --wp-disable command is for ease of access for later use, this will make it where if you accidentally re-enroll, it will keep WP disabled even if 
+your wp screw or battery is in.)
+
+
+turn off chromebook
+
+enable wp
+
+turn on cb and boot into dev mode (it will work trust me)
+
+powerwash
+
+Go back into the bash terminal
+
+run these commands:
+tpm_manager_client take_ownership
+cryptohome --action=remove_firmware_management_parameters
+
+
+
+powerwash
+
+profit
+It will say chromeos is missing or damaged so use a recovery usb.
+
+        NOTE: if you're on Octopus you will have to have a recovery Usb recommend using v107 because its most stable.
+      </pre>
+      <h3></h3>
+      <p>
+        You will now be able to, among other things, unenroll your Chromebook.
+        It will now behave entirely as if it is a personal computer and no
+        longer contain spyware or blocker extensions. After you do this and get
+        past the "determining device configuration" screen, you will be able to
+        actually turn dev mode on. 
+
+        One thing with this method is after you connect to your internet it will say it cant connect to google so 
+        go into guest mode and leave guest mode to bypass this.
+         
+        Yeah i know i slopply ripped this site and yes i know thats skiddy behaviour but idc -Phill
+   
+      <spc></spc>
+    </p>
+  </div>
+</body>
+
+</html>
