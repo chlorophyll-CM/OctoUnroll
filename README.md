@@ -9,6 +9,6 @@ Here is proof of them getting rid of the ability to Disable WP
 
 https://source.chromium.org/chromiumos/chromiumos/codesearch/+/main:src/platform/cr50/board/cr50/wp.c;l=101
 
-Im pretty sure the only way to fix this is to delete the line of code and compile chromiumos turn it into chromeos with what CoolElectronics said And install ARCVM or ARC++
+Im pretty sure the only way to fix this is to delete the lines and of code and compile chromiumos turn it into chromeos with what CoolElectronics said And install ARCVM or ARC++ but then again im not sure that will work because chromeos is secure and not secure at the same time And without disabling wp i cant get fast boot screens for dev mode :(
 
 Or back up your chromebook and flash it to your cr50/EMMC i dont really know if thats how because ive never used a bus pirate before
