@@ -8,3 +8,7 @@ SO shim up and TPM down -Phill
 Here is proof of them getting rid of the ability to Disable WP
 
 https://source.chromium.org/chromiumos/chromiumos/codesearch/+/main:src/platform/cr50/board/cr50/wp.c;l=101
+
+Im pretty sure the only way to fix this is to delete the line of code and compile chromiumos turn it into chromeos with what CoolElectronics said And install ARCVM or ARC++
+
+Or back up your chromebook and flash it to your cr50/EMMC i dont really know if thats how because ive never used a bus pirate before
